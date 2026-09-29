@@ -146,3 +146,10 @@ cython_debug/
 
 # uv specific
 .uv/
+
+# Local Gobguessr data
+gobguessr.db
+gobguessr.db-journal
+gobguessr.db-shm
+gobguessr.db-wal
+images/*.webp

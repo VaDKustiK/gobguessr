@@ -1,13 +1,21 @@
 [project]
-name = "template"
+name = "gobguessr"
 version = "0.1.0"
-description = "Add your description here"
-requires-python = ">=3.14"
-dependencies = []
+description = "A small streak-based image guessing game"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.118.0",
+    "itsdangerous>=2.2.0",
+    "jinja2>=3.1.6",
+    "python-multipart>=0.0.20",
+    "uvicorn[standard]>=0.37.0",
+]
 
 [dependency-groups]
 dev = [
+    "httpx>=0.28.1",
     "pre-commit>=4.6.2",
+    "pytest>=8.4.2",
     "ruff>=0.16.5",
     "ty>=0.0.78",
 ]
@@ -51,6 +59,7 @@ indent-style = "space"
 testpaths = ["tests"]
 python_files = "test_*.py"
 python_functions = "test_*"
+pythonpath = ["."]
 
 [tool.ty.environment]
 python-version = "3.14"
@@ -60,4 +69,3 @@ error-on-warning = false
 
 [tool.ty.rules]
 all = "warn"
-

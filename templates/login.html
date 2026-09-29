@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Welcome · Gobguessr{% endblock %}
+{% block content %}
+<section class="login-shell">
+  <div class="landing-creature">
+    {% if has_images %}
+      <img src="{{ url_for('landing_image') }}" width="64" height="44" alt="A random creature">
+    {% else %}
+      <img src="{{ url_for('static', path='/gobbnt.webp') }}" alt="Gobguessr creature">
+    {% endif %}
+  </div>
+  <h1>Gobguessr</h1>
+  <p class="lede">Name what you see. Keep the streak alive.</p>
+  <form class="login-form" action="/login" method="post">
+    <label for="name">What should we call you?</label>
+    <div class="input-row">
+      <input id="name" name="name" type="text" maxlength="30" placeholder="Your name" autocomplete="nickname" required autofocus>
+      <button type="submit">Start playing <span aria-hidden="true">→</span></button>
+    </div>
+    {% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+  </form>
+</section>
+{% endblock %}
