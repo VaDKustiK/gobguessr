@@ -152,4 +152,3 @@ gobguessr.db
 gobguessr.db-journal
 gobguessr.db-shm
 gobguessr.db-wal
-images/*.webp
